@@ -2,45 +2,153 @@
 //import { faEnvelope } from '@fortawesome/free-solid-svg-icons'
 
 //import { solid, regular, brands, icon } from '@fortawesome/fontawesome-svg-core/import.macro' // <-- import styles to be used
+import { useState } from 'react';
 
-import '@fontsource/roboto/300.css';
+/*import '@fontsource/roboto/300.css';
 import '@fontsource/roboto/400.css';
 import '@fontsource/roboto/500.css';
-import '@fontsource/roboto/700.css';
+import '@fontsource/roboto/700.css';*/
 
-import Container from '@mui/material/Container';
-import Button from '@mui/material/Button';
-import TextField from '@mui/material/TextField';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+
+import Alert from 'react-bootstrap/Alert';
+import Button from 'react-bootstrap/Button';
+import Stack from 'react-bootstrap/Stack';
+
+/*import Container from '@mui/material/Container';*/
+//import Button from '@mui/material/Button';
+/*import TextField from '@mui/material/TextField';
 import Autocomplete from '@mui/material/Autocomplete';
-import Box from '@mui/material/Box';
-import Alert from '@mui/material/Alert';
-import AlertTitle from '@mui/material/AlertTitle';
-import Stack from '@mui/material/Stack';
+import Box from '@mui/material/Box';*/
+//import Alert from '@mui/material/Alert';
+/*import AlertTitle from '@mui/material/AlertTitle';
+import Stack from '@mui/material/Stack';*/
 
 //import Box from '@mui/joy/Box';
-import Sheet from '@mui/joy/Sheet';
+/*import Sheet from '@mui/joy/Sheet';
 import { styled } from '@mui/joy/styles';
-import Grid from '@mui/joy/Grid';
+import Grid from '@mui/joy/Grid';*/
 
-import { FaHeart, FaRegHeart } from 'react-icons/fa';
-import Icon from '@material-ui/core/Icon';
+/*import { FaHeart, FaRegHeart } from 'react-icons/fa';
+import Icon from '@material-ui/core/Icon';*/
 //import Icon from '@material-ui/icons';
 //import Icon from '@material-ui/core';
 
 import logo from './logo.svg';
 import './App.css';
 
-const Item = styled(Sheet)(({ theme }) => ({
+/*const Item = styled(Sheet)(({ theme }) => ({
 	...theme.typography.body2,
 	padding: theme.spacing(1),
 	textAlign: 'center',
 	color: theme.vars.palette.text.tertiary,
-}));
+}));*/
 
 function App() {
+	const [show, setShow] = useState(true);
 	return (
 		<div className="App">
 			<header className="App-header">
+				
+
+				{/*<Card variant="solid" color="primary" invertedColors>…</Card>*/}
+
+				{/*<Sheet variant="soft" color="info" invertedColors>…</Sheet>*/}
+
+				<p className="edit">
+					Iconos Material Icons
+				</p>
+				{/*<span className="material-icons">face</span>*/}
+				<img src={logo} className="App-logo" alt="logo" />
+				<a className="App-link" href="https://reactjs.org" target="_blank" rel="noopener noreferrer">
+					Learn React
+				</a>
+				{/*<p className="edit">
+					Iconos React Icons Fa
+				</p>
+				<FaHeart style={{color: 'white', fontSize: '20px'}}/><br/>
+				<FaRegHeart style={{color: 'green', fontSize: '20px'}}/>*/}
+				{/*<p>
+					Edit <code>src/App.js</code> and save to reload.
+				</p>*/}
+				<p className="edit">
+					React - Bootstrap
+				</p>
+				
+				<Container>
+					{<Stack direction="horizontal" gap={2} className="justify-content-center">
+						<Button as="a" variant="primary">
+							Button as link
+						</Button>
+						<Button as="a" variant="success">
+							Button as link
+						</Button>
+					</Stack>}
+				</Container>
+				<p></p>
+				<p className="">Or right-aligned</p>
+				<p></p>
+				<Container>
+					{/*
+						<div class="alert alert-danger alert-dismissible fade show" role="alert">
+							<strong>Oh snap! You got an error!</strong>
+							<p>
+								Change this and that and try again.
+							</p>
+							<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+								<span aria-hidden="true">&times;</span>
+							</button>
+						</div>
+					*/}
+					
+					<>
+						<Alert show={show} variant="success">
+							<Alert.Heading>How's it going?!</Alert.Heading>
+							<p>
+							Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget
+							lacinia odio sem nec elit. Cras mattis consectetur purus sit amet
+							fermentum.
+							</p>
+							<hr />
+							<div className="d-flex justify-content-end">
+							<Button onClick={() => setShow(false)} variant="outline-success">
+								Close me y'all!
+							</Button>
+							</div>
+						</Alert>
+
+						{!show && <Button onClick={() => setShow(true)}>Show Alert</Button>}
+					</>
+				</Container>
+				<p></p>
+				<Container>
+					<Row>
+						<Col sm={8} bg="primary">sm=8</Col>
+						<Col sm={4} bg="secondary">sm=4</Col>
+					</Row>
+					<Row>
+						<Col sm>sm=true</Col>
+						<Col sm>sm=true</Col>
+						<Col sm>sm=true</Col>
+					</Row>
+				</Container>
+				<p></p>
+				{/*
+				<p className="edit">
+					Iconos FontAwesome
+				</p>
+				<i class="fas fa-user"></i><br/>
+				<i class="far fa-user"></i><br/>
+				<i class="fab fa-github-square"></i><br/>
+				<p className="edit">
+					ReactJS en Windows
+				</p>
+				<Icon className="fa fa-plus-circle MuiIcon-colorSecundary"/>
+
 				<p className="edit">
 					Material Desing
 				</p>
@@ -97,40 +205,9 @@ function App() {
 						</Alert>
 					</Stack>
 				</Container>
-
-				{/*<Card variant="solid" color="primary" invertedColors>…</Card>*/}
-
-				<Sheet variant="soft" color="info" invertedColors>…</Sheet>
-
-				<p className="edit">
-					Iconos Material Icons
-				</p>
-				<span className="material-icons">face</span>
-				<img src={logo} className="App-logo" alt="logo" />
-				<a className="App-link" href="https://reactjs.org" target="_blank" rel="noopener noreferrer">
-					Learn React
-				</a>
-				<p className="edit">
-					Iconos React Icons Fa
-				</p>
-				<FaHeart style={{color: 'white', fontSize: '20px'}}/><br/>
-				<FaRegHeart style={{color: 'green', fontSize: '20px'}}/>
-				{/*<p>
-					Edit <code>src/App.js</code> and save to reload.
-				</p>*/}
-				<p className="edit">
-					Iconos FontAwesome
-				</p>
-				<i class="fas fa-user"></i><br/>
-				<i class="far fa-user"></i><br/>
-				<i class="fab fa-github-square"></i><br/>
-				<p className="edit">
-					ReactJS en Windows
-				</p>
-				<Icon className="fa fa-plus-circle MuiIcon-colorSecundary"/>
 				<ul className='testlist'>
 					<li>Ejemplo lista</li>
-				</ul>
+				</ul>*/}
 			</header>
 		</div>
 		);
@@ -138,7 +215,7 @@ function App() {
 
 export default App;
 
-const top100Films = [
+/*const top100Films = [
 	{ label: 'The Shawshank Redemption', year: 1994 },
 	{ label: 'The Godfather', year: 1972 },
 	{ label: 'The Godfather: Part II', year: 1974 },
@@ -263,4 +340,4 @@ const top100Films = [
 	{ label: 'Snatch', year: 2000 },
 	{ label: '3 Idiots', year: 2009 },
 	{ label: 'Monty Python and the Holy Grail', year: 1975 },
-  ];
+  ];*/
