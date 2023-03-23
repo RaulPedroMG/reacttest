@@ -1,9 +1,33 @@
+import React from 'react';
+
 //import { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Container from 'react-bootstrap/Container';
 // import logo from './logo.svg';
 import './AppTest.css';
 import Welcome from './components/Welcome';
+import Profile from './components/Profile';
+
+function formatName(user) {
+	return user.firstName + ' ' + user.lastName;
+}
+  
+const user = {
+	firstName: 'React',
+	lastName: 'JS'
+};
+  
+const element = (
+	<h3>
+		Hello, {formatName(user)}!
+	</h3>
+);
+
+const element2 = React.createElement(
+	'h3',
+	{className: 'greeting'},
+	'Hello, desde element2!'
+);
 
 function AppTest() {
 	//const [show, setShow] = useState(true);
@@ -13,9 +37,16 @@ function AppTest() {
 		<div className="AppTest">
 			<header className="App-headerTest">
 				<Container>
-					<Welcome message="Hola Welcome Props" name="KadaSofware" />
+					<h2> {new Date().toLocaleTimeString()}.</h2>
+					<Welcome
+						message="Hola Welcome Props"
+						name="KadaSofware">
+					</Welcome>
+					<Profile></Profile>
 					<div className="shopping-list">
 						{bienvenida}
+						{element}
+						{element2}
 						<h1>Lista de compras para</h1>
 						<ul>
 							<li>Instagram</li>

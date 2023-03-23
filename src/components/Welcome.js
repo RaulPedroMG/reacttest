@@ -1,6 +1,6 @@
-export default function welcome(props){
+export default function welcome({message, name}){
     //console.log(props)
-    const {message, name} = props;
+    //const {message, name} = props;
     const name2 = "Kadasoftware";
     return (
         <div>
