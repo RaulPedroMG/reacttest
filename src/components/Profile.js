@@ -1,3 +1,5 @@
+import React from "react";
+
 const user = {
     name: 'Hedy Lamarr',
     imageUrl: 'https://i.imgur.com/yXOvdOSs.jpg',
@@ -7,7 +9,7 @@ const user = {
   export default function Profile() {
     return (
         <>
-            <h1>{user.name}</h1>
+            <h2>{user.name}</h2>
             <img
                 className="avatar"
                 src={user.imageUrl}
