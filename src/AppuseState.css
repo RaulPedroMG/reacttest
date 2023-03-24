@@ -16,7 +16,7 @@
 .App-headeruseState {
 	padding-top: 2vh;
 	/*background-color: #282c34;*/
-	background-color: rgb(220, 175, 210);
+	background-color: rgb(0, 245, 240);
 	min-height: auto;
 	display: flex;
 	flex-direction: column;
