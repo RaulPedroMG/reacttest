@@ -19,7 +19,7 @@ const user = {
   
 const element = (
 	<h3>
-		Hello, {formatName(user)}!
+		Hello, {formatName(user)} desde element!
 	</h3>
 );
 
