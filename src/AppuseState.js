@@ -13,7 +13,7 @@ function AppTest() {
 		<div className="AppuseState">
 			<header className="App-headeruseState">
 				<Container>
-					<h2>El estado en ReactJS - Hook useState</h2>
+					<h3>El estado en ReactJS - Hook useState</h3>
 					<MiPrimerEstado/>
 				</Container>
 			</header>

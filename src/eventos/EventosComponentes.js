@@ -1,6 +1,8 @@
 import React from 'react'
 
 import Button from 'react-bootstrap/Button';
+import Form from 'react-bootstrap/Form';
+import InputGroup from 'react-bootstrap/InputGroup';
 
 export const EventosComponentes = () => {
 	const hasDadoClic = (e, nombre) => {
@@ -41,14 +43,15 @@ export const EventosComponentes = () => {
 				¡Pasa por encima!
 			</div>
 			<br/>
-			<p>
+			<InputGroup size='lg'>
 				{/* Evento con Focus y Blur*/}
-				<input type="text"
+				<Form.Control
+					aria-label="Text"
+					type='text'
 					onFocus={estasDentroInput}
 					onBlur={estasFueraInput}
-					placeholder="Introduce tu nombre..."
-				/>
-			</p>
+					placeholder='Introduce tu nombre...' />
+			</InputGroup>
 		</div>
 	)
 }
