@@ -13,10 +13,10 @@
 	}
 }
 
-.App-headerTest {
+.App-headeruseState {
 	padding-top: 2vh;
 	/*background-color: #282c34;*/
-	background-color: rgb(200, 220, 250);
+	background-color: rgb(220, 175, 210);
 	min-height: auto;
 	display: flex;
 	flex-direction: column;
@@ -24,6 +24,7 @@
 	justify-content: center;*/
 	font-size: calc(6px + 2vmin);
 	color: rgb(0, 30, 60);
+	padding-bottom: 2vh;
 }
 
 .App-link {

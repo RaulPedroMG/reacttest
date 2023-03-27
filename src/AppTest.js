@@ -4,6 +4,7 @@ import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Container from 'react-bootstrap/Container';
 // import logo from './logo.svg';
+
 import './AppTest.css';
 import Welcome from './components/Welcome';
 import Profile from './components/Profile';
@@ -50,7 +51,6 @@ function AppTest() {
 		<div className="AppTest">
 			<header className="App-headerTest">
 				<Container>
-					<h2> {new Date().toLocaleTimeString()}.</h2>
 					<br></br>
 					{bienvenida}
 					{element}
@@ -58,7 +58,6 @@ function AppTest() {
 					<br></br>
 					<hr/>
 					<EventosComponentes />
-					<hr/>
 					<Usuario />
 					<Libros />
 					<hr/>
