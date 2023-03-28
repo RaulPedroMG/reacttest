@@ -5,7 +5,9 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Container from 'react-bootstrap/Container';
 
 import './AppUseEffect.css';
+
 import { ComponenteUseEffect } from './components/ComponenteUseEffect';
+import { AjaxComponente } from './components/AjaxComponente';
 
 
 function AppUseEffect() {
@@ -13,6 +15,7 @@ function AppUseEffect() {
 		<div className="AppuseState">
 			<header className="App-headerUseEffect">
 				<Container>
+					<AjaxComponente/>
 					<ComponenteUseEffect/>
 				</Container>
 			</header>
