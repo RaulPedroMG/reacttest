@@ -31,15 +31,18 @@ export const ComponenteUseEffect = () => {
 	return (
 		<div>
 			<h3>Hook useEffect</h3>
-			<Badge bg={contador >= 6 ? "danger" : "primary"}>
-				{usuario}
-			</Badge>
-			<Badge bg={contador >= 6 ? "danger" : "primary"}>
-				{fecha}
-			</Badge>
+			<h3>
+				<Badge bg={contador >= 6 ? "danger" : "primary"}>
+					{usuario}
+				</Badge>
+				&nbsp;
+				<Badge bg={contador >= 6 ? "danger" : "primary"}>
+					{fecha}
+				</Badge>
+			</h3>
 			<Form>
 				<Form.Group className="mb-3">
-					<InputGroup size='lg'>
+					<InputGroup size='lg' className='mb-1'>
 						<Form.Control
 							aria-label="Text"
 							type='text'
@@ -47,11 +50,11 @@ export const ComponenteUseEffect = () => {
 							placeholder='Cambiar nombre...' />
 					</InputGroup>
 					<Button variant='success' onClick={cambiarFecha}>
-						Cambia Fecha
+						Cambiar Fecha
 					</Button>
 				</Form.Group>
 			</Form>
-			{usuario == "K4d4" && <AvisoComponente/>}
+			{usuario === "K4d4" && <AvisoComponente/>}
 		</div>
 	)
 }

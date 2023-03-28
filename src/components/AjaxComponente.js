@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 
 export const AjaxComponente = () => {
 	const [usuarios, setUsuarios] = useState([]);
-
+	const [cargando, setCargando] = useState(true);
 	//Genérico básico
 	const getUsuariosEstaticos = () => {
 		setUsuarios([
@@ -44,10 +44,26 @@ export const AjaxComponente = () => {
 			)
 	}
 
+	const getUsuariosAjaxAW = async() => {
+		const peticion = await fetch("https://reqres.in/api/users?page=1");
+		const {data} = await peticion.json();
+		setUsuarios(data);
+	}
+
 	useEffect(() => {
 		//getUsuariosEstaticos();
-		getUsuarioAjaxPms();
+		//getUsuarioAjaxPms();
+		getUsuariosAjaxAW();
 	}, []);
+
+	/*if (cargando === true ){
+		//Cuando todo está cargando
+		return(
+
+		)
+	}*/
+
+	//Cuando todo salió bien
 	return (
 		<div>
 			<h3>Listado de usuarios via Ajax</h3>
