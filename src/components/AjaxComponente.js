@@ -1,10 +1,20 @@
 import React, { useEffect, useState } from 'react'
 
+import Alert from 'react-bootstrap/Alert';
+
 export const AjaxComponente = () => {
 	const [usuarios, setUsuarios] = useState([]);
 	const [cargando, setCargando] = useState(true);
+	const [errores, setErrores] = useState("");
+	
+	useEffect(() => {
+		//getUsuariosEstaticos();
+		//getUsuarioAjaxPms();
+		getUsuariosAjaxAW();
+	}, []);
+
 	//Genérico básico
-	const getUsuariosEstaticos = () => {
+	/*const getUsuariosEstaticos = () => {
 		setUsuarios([
 			{
 				"id": 1,
@@ -28,9 +38,9 @@ export const AjaxComponente = () => {
 				"avatar": "https://reqres.in/img/faces/9-image.jpg"
 			}
 		]);
-	}
+	}*/
 
-	const getUsuarioAjaxPms = () => {
+	/*const getUsuarioAjaxPms = () => {
 		fetch("https://reqres.in/api/users?page=1")
 			.then(respuesta => respuesta.json())
 			.then(
@@ -42,31 +52,40 @@ export const AjaxComponente = () => {
 					console.log(error);
 				}
 			)
-	}
+	}*/
 
 	const getUsuariosAjaxAW = () => {
 		setTimeout(async() => {
-			const peticion = await fetch("https://reqres.in/api/users?page=1");
-			const {data} = await peticion.json();
-			setUsuarios(data);
-			setCargando(false);
+			try{
+				const peticion = await fetch("https://reqres.in/api/users?page=1");
+				const {data} = await peticion.json();
+				setUsuarios(data);
+				setCargando(false);
+			}catch(error){
+				console.log(error);
+				setErrores(error.message);
+			}
 		}, 4000);
 	}
 
-	useEffect(() => {
-		//getUsuariosEstaticos();
-		//getUsuarioAjaxPms();
-		getUsuariosAjaxAW();
-	}, []);
-
-	if (cargando === true ){
+	if (errores !== ""){
+		//Cuando hay errores
+		return(
+			<Alert variant="danger">
+				<Alert.Heading>Error!</Alert.Heading>
+				<p>
+					{errores}
+				</p>
+			</Alert>
+		)
+	}else if (cargando === true ){
 		//Cuando todo está cargando
 		return(
 			<div className='cargando'>
 				Cargando datos...
 			</div>
 		);
-	}else{
+	}else if(cargando === false && errores === ""){
 		return(
 			//Cuando todo salió bien
 			<div>
@@ -79,7 +98,7 @@ export const AjaxComponente = () => {
 								<li key={usuario.id}>
 									{usuario.first_name}&nbsp;
 									{usuario.last_name}<br></br>
-									<img src={usuario.avatar} width="50" />
+									<img alt={"imagen usuario "+usuario.id} src={usuario.avatar} width="50" />
 								</li>
 								);
 						})
