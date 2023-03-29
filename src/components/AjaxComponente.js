@@ -71,7 +71,7 @@ export const AjaxComponente = () => {
 	if (errores !== ""){
 		//Cuando hay errores
 		return(
-			<Alert variant="danger">
+			<Alert variant="danger" onClose={() => {}} dismissible>
 				<Alert.Heading>Error!</Alert.Heading>
 				<p>
 					{errores}
