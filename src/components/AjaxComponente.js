@@ -44,10 +44,13 @@ export const AjaxComponente = () => {
 			)
 	}
 
-	const getUsuariosAjaxAW = async() => {
-		const peticion = await fetch("https://reqres.in/api/users?page=1");
-		const {data} = await peticion.json();
-		setUsuarios(data);
+	const getUsuariosAjaxAW = () => {
+		setTimeout(async() => {
+			const peticion = await fetch("https://reqres.in/api/users?page=1");
+			const {data} = await peticion.json();
+			setUsuarios(data);
+			setCargando(false);
+		}, 4000);
 	}
 
 	useEffect(() => {
@@ -56,25 +59,33 @@ export const AjaxComponente = () => {
 		getUsuariosAjaxAW();
 	}, []);
 
-	/*if (cargando === true ){
+	if (cargando === true ){
 		//Cuando todo está cargando
 		return(
-
-		)
-	}*/
-
-	//Cuando todo salió bien
-	return (
-		<div>
-			<h3>Listado de usuarios via Ajax</h3>
-			<ol className='usuarios'>
-				{
-					usuarios.map(usuario => {
-						console.log(usuario);
-						return <li key={usuario.id}>{usuario.first_name} {usuario.last_name}</li>
-					})
-				}
-			</ol>
-		</div>
-	)
+			<div className='cargando'>
+				Cargando datos...
+			</div>
+		);
+	}else{
+		return(
+			//Cuando todo salió bien
+			<div>
+				<h3>Listado de usuarios via Ajax</h3>
+				<ol className='usuarios'>
+					{
+						usuarios.map(usuario => {
+							console.log(usuario);
+							return (
+								<li key={usuario.id}>
+									{usuario.first_name}&nbsp;
+									{usuario.last_name}<br></br>
+									<img src={usuario.avatar} width="50" />
+								</li>
+								);
+						})
+					}
+				</ol>
+			</div>
+		);
+	}
 }

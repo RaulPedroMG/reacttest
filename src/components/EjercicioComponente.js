@@ -15,9 +15,11 @@ export const EjercicioComponente = ({year}) => {
 	return (
 		<div>
 			<h3>Ejercicio con Eventos y useState</h3>
-			<Badge bg="success">
-				{yearNow}
-			</Badge>
+			<h3>
+				<Badge bg="success">
+					{yearNow}
+				</Badge>
+			</h3>
 			<p>
 				<Button variant="outline-danger" onClick={anterior}>Anterior</Button>
 				&nbsp;
