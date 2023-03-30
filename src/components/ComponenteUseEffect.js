@@ -24,9 +24,9 @@ export const ComponenteUseEffect = () => {
 
 	//Se ejecuta solo si se cambia el usuario
 	useEffect(() =>{
-		setContador(contador + 1);
+		setContador(contador => contador + 1);
 		console.log("Has modificado el usuario: " + contador);
-	}, [fecha, usuario, contador]);
+	}, [fecha, usuario]);
 
 	return (
 		<div>
