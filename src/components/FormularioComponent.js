@@ -2,15 +2,14 @@ import React, { useState } from 'react'
 
 import { FormControl } from '@mui/material';
 //import {InputLabel} from '@mui/material';
-import InputLabel from '@mui/material/InputLabel';
+//import InputLabel from '@mui/material/InputLabel';
 import {TextField} from '@mui/material';
-import MenuItem from '@mui/material/MenuItem';
-import Select from '@mui/material/Select';
+//import MenuItem from '@mui/material/MenuItem';
+//import Select from '@mui/material/Select';
 import TextareaAutosize from '@mui/base/TextareaAutosize';
 import Button from '@mui/material/Button';
+//import Input from '@mui/material/Input';
 import SendIcon from '@mui/icons-material/Send';
-
-import Form from 'react-bootstrap/Form';
 
 export const FormularioComponent = () => {
 	const [usuario, setUsuario] = useState({});
@@ -54,7 +53,7 @@ export const FormularioComponent = () => {
 				<FormControl>
 					<TextField label="Apellido" variant="outlined" name='apellido' onChange={cambiarDatos} />
 				</FormControl>
-				<Form.Select
+				{/* <Form.Select
 					aria-label="Default select example"
 					variant="sm"
 					name="sexo"
@@ -62,7 +61,8 @@ export const FormularioComponent = () => {
 				>
 					<option value="hombre">Hombre</option>
 					<option value="mujer">Mujer</option>
-				</Form.Select>
+				</Form.Select> */}
+				
 				<br></br>
 				<FormControl sx={{minWidth: 230 }}>
 					<TextareaAutosize
@@ -76,7 +76,7 @@ export const FormularioComponent = () => {
 				</FormControl>
 				<br></br>
 				<FormControl>
-					<Button sx={{ mt: 1, mr: 1 }} type="submit" variant="contained" endIcon={<SendIcon />} name="enviar">
+					<Button variant="contained" type="submit" value="Enviar" name="enviar" endIcon={<SendIcon />} >
 						Enviar
 					</Button>
 				</FormControl>
