@@ -2,10 +2,11 @@ import React, { useState } from 'react'
 
 import { FormControl } from '@mui/material';
 //import {InputLabel} from '@mui/material';
-//import InputLabel from '@mui/material/InputLabel';
+import InputLabel from '@mui/material/InputLabel';
 import {TextField} from '@mui/material';
-//import MenuItem from '@mui/material/MenuItem';
-//import Select from '@mui/material/Select';
+import Select from '@mui/material/Select';
+import MenuItem from '@mui/material/MenuItem';
+//import ListSubheader from '@mui/material/ListSubheader';
 import TextareaAutosize from '@mui/base/TextareaAutosize';
 import Button from '@mui/material/Button';
 //import Input from '@mui/material/Input';
@@ -46,6 +47,7 @@ export const FormularioComponent = () => {
 					</div>
 				)
 			}
+			<hr/>
 			<form onSubmit={conseguirDatosFormulario}>
 				<FormControl>
 					<TextField label="Nombre" variant="outlined" name='nombre' onChange={cambiarDatos} />
@@ -53,19 +55,20 @@ export const FormularioComponent = () => {
 				<FormControl>
 					<TextField label="Apellido" variant="outlined" name='apellido' onChange={cambiarDatos} />
 				</FormControl>
-				{/* <Form.Select
-					aria-label="Default select example"
-					variant="sm"
-					name="sexo"
-					onChange={cambiarDatos}
-				>
-					<option value="hombre">Hombre</option>
-					<option value="mujer">Mujer</option>
-				</Form.Select> */}
-				
+				<FormControl sx={{ minWidth: 120 }}>
+					<InputLabel htmlFor="grouped-select">Sexo</InputLabel>
+					<Select defaultValue="" id="grouped-select" label="Grouping" name='sexo' onChange={cambiarDatos}>
+						<MenuItem value="">
+							<em>None</em>
+						</MenuItem>
+						<MenuItem value="hombre">Hombre</MenuItem>
+						<MenuItem value="mujer">Mujer</MenuItem>
+					</Select>
+				</FormControl>
 				<br></br>
 				<FormControl sx={{minWidth: 230 }}>
 					<TextareaAutosize
+						className='mt-1'
 						aria-label="minimum height"
 						minRows={2}
 						placeholder="Biografía"
@@ -76,7 +79,7 @@ export const FormularioComponent = () => {
 				</FormControl>
 				<br></br>
 				<FormControl>
-					<Button variant="contained" type="submit" value="Enviar" name="enviar" endIcon={<SendIcon />} >
+					<Button variant="contained" type="submit" value="enviar" name="enviar" endIcon={<SendIcon />} className='mt-2'>
 						Enviar
 					</Button>
 				</FormControl>

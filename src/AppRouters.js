@@ -5,15 +5,16 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Container from 'react-bootstrap/Container';
 
 import './AppRouters.css';
+import { RouterPrincipal } from './components/routers/RouterPrincipal';
 
 
 
 function AppRouters() {
 	return (
-		<div className="AppuseState">
-			<header className="App-headerFormulariosEventos">
+		<div className="AppRouters">
+			<header className="App-Routes">
 				<Container>
-					
+					<RouterPrincipal />
 				</Container>
 			</header>
 		</div>

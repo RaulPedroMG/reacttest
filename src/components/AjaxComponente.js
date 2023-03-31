@@ -98,7 +98,7 @@ export const AjaxComponente = () => {
 								<li key={usuario.id}>
 									{usuario.first_name}&nbsp;
 									{usuario.last_name}<br></br>
-									<img alt={"imagen usuario "+usuario.id} src={usuario.avatar} width="50" />
+									<img alt={"imagen usuario "+usuario.id} src={usuario.avatar} width="100" />
 								</li>
 								);
 						})
