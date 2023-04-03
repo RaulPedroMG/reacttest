@@ -65,7 +65,7 @@ export const AjaxComponente = () => {
 				console.log(error);
 				setErrores(error.message);
 			}
-		}, 4000);
+		}, 500);
 	}
 
 	if (errores !== ""){

@@ -9,11 +9,13 @@ import reportWebVitals from './reportWebVitals';
 import { StyledEngineProvider } from '@mui/material/styles';
 import AppFormulariosEventos from './AppFormulariosEventos';
 import AppRouters from './AppRouters';
+import AppUseRef from './AppUseRef';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
 	<React.StrictMode>
 		<StyledEngineProvider injectFirst>
+			<AppUseRef></AppUseRef>
 			<AppRouters></AppRouters>
 			<AppFormulariosEventos />
 			<AppUseEffect />

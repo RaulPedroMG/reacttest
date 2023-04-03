@@ -11,7 +11,7 @@ import { RouterPrincipal } from './components/routers/RouterPrincipal';
 
 function AppRouters() {
 	return (
-		<div className="AppRouters">
+		<div className="App-Routers">
 			<header className="App-Routes">
 				<Container>
 					<RouterPrincipal />

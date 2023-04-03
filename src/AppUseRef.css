@@ -13,10 +13,10 @@
 	}
 }
 
-.App-Routers {
+.App-UseRef {
 	padding-top: 2vh;
 	/*background-color: #282c34;*/
-	background-color: rgb(250, 242, 247);
+	background-color: rgb(180, 232, 227);
 	min-height: auto;
 	display: flex;
 	flex-direction: column;
@@ -39,6 +39,16 @@ ul.testlist{
 	color: rgba(90, 180, 100, 1);
 }
 
+.miCaja {
+    border: 3px solid brown;
+    padding: 10px;
+    margin: 15px;
+}
+
+.fondoverde {
+    background-color: green;
+    color: blanchedalmond;
+}
 @keyframes App-logo-spin {
 	from {
 		transform: rotate(0deg);

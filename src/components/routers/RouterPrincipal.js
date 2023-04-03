@@ -14,6 +14,14 @@ import HomeIcon from '@mui/icons-material/Home';
 import AppsSharpIcon from '@mui/icons-material/AppsSharp';
 import MailSharpIcon from '@mui/icons-material/MailSharp';
 import { Persona } from '../pages/Persona';
+import { PanelControl } from '../pages/PanelControl';
+
+import SettingsIcon from '@mui/icons-material/Settings';
+
+import { PanelInicio } from '../panel/PanelInicio';
+import { Crear } from '../panel/Crear';
+import { Gestion } from '../panel/Gestion';
+import { Acerca } from '../panel/Acerca';
 
 export const RouterPrincipal = () => {
 	const [value, setValue] = React.useState(0);
@@ -38,24 +46,26 @@ export const RouterPrincipal = () => {
 					</ul>
 				</nav> */}
 				<Box sx={{ width: '100%' }} className="mt-4">
-					<Tabs value={value} onChange={handleChange} centered>
+					<Tabs value={value} onChange={handleChange} centered variant="fullWidth">
 						<Tab label="Inicio"
 							icon={<HomeIcon />}
 							component={NavLink}
 							to="/inicio"
-							className="Mui-selected"
 						/>
 						<Tab label="Artículos"
 							icon={<AppsSharpIcon />}
 							component={NavLink}
 							to="/articulos"
-							className="Mui-selected"
 						/>
 						<Tab label="Contacto"
 							icon={<MailSharpIcon />}
 							component={NavLink}
 							to="/contacto"
-							className="Mui-selected"	
+						/>
+						<Tab label="Panel de Control"
+							icon={<SettingsIcon/>}
+							component={NavLink}
+							to="/panel"
 						/>
 					</Tabs>
 				</Box>
@@ -68,6 +78,13 @@ export const RouterPrincipal = () => {
 					<Route path='/persona/:nombre' element={<Persona></Persona>} />
 					<Route path='/persona/:nombre/:apellido' element={<Persona></Persona>} />
 					<Route path='/redirigir' element={<Navigate to="/persona/RaulPedro/MéndezGarcía" />} />
+					<Route path='/panel/*' element={<PanelControl />}>
+					<Route path='inicio' element={<PanelInicio />} />
+						<Route index element={<PanelInicio />} />
+						<Route path='crear-articulos' element={<Crear />} />
+						<Route path='gestion-usuarios' element={<Gestion />} />
+						<Route path='acerca-de' element={<Acerca />} />
+					</Route>
 					<Route path='*' element={<Error></Error>}/>
 				</Routes>
 			</BrowserRouter>
