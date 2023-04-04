@@ -19,13 +19,13 @@ export const ComponenteUseEffect = () => {
 	const [contador, setContador] = useState(0);
 	//Se ejecuta solo una vez, solo al cargar el componente
 	useEffect(() => {
-		console.log("Has cargado el componente");
+		//console.log("Has cargado el componente");
 	}, []);
 
 	//Se ejecuta solo si se cambia el usuario
 	useEffect(() =>{
 		setContador(contador => contador + 1);
-		console.log("Has modificado el usuario: " + contador);
+		//console.log("Has modificado el usuario: " + contador);
 	}, [fecha, usuario]);
 
 	return (

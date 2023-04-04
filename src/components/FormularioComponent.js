@@ -24,7 +24,7 @@ export const FormularioComponent = () => {
 			biografia: datos.biografia.value,
 			enviar: datos.enviar.value
 		}
-		console.log(usuario);
+		//console.log(usuario);
 		setUsuario(usuario);
 	}
 	const cambiarDatos = e => {

@@ -62,7 +62,7 @@ export const AjaxComponente = () => {
 				setUsuarios(data);
 				setCargando(false);
 			}catch(error){
-				console.log(error);
+				//console.log(error);
 				setErrores(error.message);
 			}
 		}, 500);
@@ -93,12 +93,12 @@ export const AjaxComponente = () => {
 				<ol className='usuarios'>
 					{
 						usuarios.map(usuario => {
-							console.log(usuario);
+							//console.log(usuario);
 							return (
 								<li key={usuario.id}>
 									{usuario.first_name}&nbsp;
 									{usuario.last_name}<br></br>
-									<img alt={"imagen usuario "+usuario.id} src={usuario.avatar} width="100" />
+									<img alt={"imagen usuario "+ usuario.id} src={usuario.avatar} width="100" />
 								</li>
 								);
 						})
