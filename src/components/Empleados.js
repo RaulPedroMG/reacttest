@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 
-export const Empleados = React.memo (({pagina}) => {
+export const Empleados = React.memo (({pagina, mensaje}) => {
 	const [empleados, setEmpleados] = useState([]);
 	useEffect(() =>{
 		console.log("Se ha vuelto a renderizar Empleado!");
@@ -13,6 +13,7 @@ export const Empleados = React.memo (({pagina}) => {
 	}
 	useEffect(() => {
 		conseguirEmpleados(pagina);
+		mensaje();
 	}, [pagina])
 	return (
 		<div>

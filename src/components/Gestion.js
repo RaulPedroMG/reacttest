@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useCallback, useEffect, useState } from 'react'
 import { Empleados } from './Empleados'
 import { Col, Form, Row, Button } from 'react-bootstrap';
 
@@ -11,6 +11,9 @@ function Gestion () {
 	useEffect(() => {
 		console.log("Vista gestión actualizada!");
 	}, [nombre, pagina])
+	const mostrarMensaje = useCallback(() => {
+		console.log("Hola, soy un mensaje desde el componenete Empleados");
+	}, [pagina]);
 	return (
 		<div>
 			<h3>Nombre del gestor: {nombre}!</h3>
@@ -42,7 +45,7 @@ function Gestion () {
 					</div>
 				</Col>
 			</Row>
-			<Empleados pagina={pagina} />
+			<Empleados pagina={pagina} mensaje={mostrarMensaje} />
 		</div>
 	)
 }
