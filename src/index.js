@@ -9,6 +9,8 @@ import AppFormulariosEventos from './AppFormulariosEventos';
 import AppRouters from './AppRouters';
 import AppUseRef from './AppUseRef';
 import AppUseMemo from './appUseMemo';
+import AppLayoutEffect from './AppLayoutEffect';
+import AppUseReducer from './AppUseReducer';
 
 import reportWebVitals from './reportWebVitals';
 import { StyledEngineProvider } from '@mui/material/styles';
@@ -17,6 +19,8 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
 	<React.StrictMode>
 		<StyledEngineProvider injectFirst>
+			<AppUseReducer></AppUseReducer>
+			<AppLayoutEffect></AppLayoutEffect>
 			<AppUseMemo></AppUseMemo>
 			<AppUseRef></AppUseRef>
 			<AppRouters></AppRouters>

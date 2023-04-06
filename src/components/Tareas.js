@@ -11,7 +11,7 @@ import { Col, Form, Row, Button } from 'react-bootstrap';
 
 function Tareas() {
 	const [tareas, setTareas] = useState([]);
-	const [contador, setContador] = useState(1230);
+	const [contador, setContador] = useState(20);
 	const guardarTareas = e => {
 		e.preventDefault();
 		let tareas_actualizadas = [...tareas, e.target.descripcion.value]

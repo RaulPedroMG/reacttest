@@ -12,7 +12,7 @@ function Gestion () {
 		console.log("Vista gestión actualizada!");
 	}, [nombre, pagina])
 	const mostrarMensaje = useCallback(() => {
-		console.log("Hola, soy un mensaje desde el componenete Empleados");
+		//console.log("Hola, soy un mensaje desde el componenete Empleados");
 	}, [pagina]);
 	return (
 		<div>

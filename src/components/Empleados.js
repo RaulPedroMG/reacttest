@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react'
 export const Empleados = React.memo (({pagina, mensaje}) => {
 	const [empleados, setEmpleados] = useState([]);
 	useEffect(() =>{
-		console.log("Se ha vuelto a renderizar Empleado!");
+		//console.log("Se ha vuelto a renderizar Empleado!");
 	}, [empleados])
 	const conseguirEmpleados = async (p) => {
 		const url = 'https://reqres.in/api/users?page=' + p;
@@ -14,7 +14,7 @@ export const Empleados = React.memo (({pagina, mensaje}) => {
 	useEffect(() => {
 		conseguirEmpleados(pagina);
 		mensaje();
-	}, [pagina])
+	}, [pagina, mensaje])
 	return (
 		<div>
 			<p>Mostrando la página: {pagina}</p>
