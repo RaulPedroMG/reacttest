@@ -4,7 +4,8 @@ import 'bootstrap-icons/font/bootstrap-icons.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 //import { faTrash } from '@fortawesome/free-solid-svg-icons';
 
-//import { FcLinux } from "react-icons/fc";
+// import { FcEmptyTrash } from "react-icons/fc";
+// import { FcLinux } from "react-icons/fc";
 
 import { Col, Form, Row, Button } from 'react-bootstrap';
 
