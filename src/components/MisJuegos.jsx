@@ -3,7 +3,7 @@ import React, { useEffect, useReducer } from 'react'
 import 'bootstrap-icons/font/bootstrap-icons.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-import { Button, Col, FloatingLabel, Form, FormControl, FormGroup, FormText, Row } from 'react-bootstrap'
+import { Button, Col, FloatingLabel, Form, FormControl, FormGroup, FormLabel, FormText, Row } from 'react-bootstrap'
 
 import JuegoReducer from '../reducers/JuegoReducer'
 
@@ -38,6 +38,19 @@ function MisJuegos() {
 		}
 		dispatch(action);
 	}
+	const editar = (e, id) => {
+		console.log(e.target.value, "Editar, " + id);
+		let juego = {
+			id,
+			titulo: e.target.value,
+			descripcion: e.target.value
+		}
+		const action = {
+			type: "editar",
+			payload: juego
+		}
+		dispatch(action);
+	}
 	return (
 		<div className='mb-3'>
 			<h3>Estos son mis videojuegos</h3>
@@ -46,10 +59,17 @@ function MisJuegos() {
 				{
 					juegos.map(juego => (
 						<li key={juego.id} className="mt-1">
-							{juego.titulo}&nbsp;
-							<Button variant="danger" size='sm' onClick={e => borrarjuego(juego.id)}>
+							{juego.titulo}
+							&nbsp;
+							<Button variant="danger" size='sm' onClick={e => borrarjuego(juego.id)} className="mb-1">
 								<FontAwesomeIcon icon="fa-solid fa-trash-can" />
 							</Button>
+							&nbsp;
+							<div className="d-grid d-inline-block">
+								<FormGroup as={Col} md={2} className="mb-3 d-inline">
+									<FormControl type="text" placeholder="Editar..." onBlur={ e => editar(e, juego.id)} />
+								</FormGroup>
+							</div>
 						</li>	
 					))
 				}
@@ -59,19 +79,16 @@ function MisJuegos() {
 			<Form onSubmit={conseguirDatosForm}>
 				<Row className='d-flex justify-content-center align-self-center'>
 					<Col md="4" sm="4" xs="6">
-						<FormGroup>
-							{/* <FormLabel>Título</FormLabel> */}
-							<FloatingLabel label="Título">
-								<FormControl type='text' name='titulo' placeholder='Escribe el Título...' />
-								<FormText className='text-muted'>Título del Videojuego</FormText>
-							</FloatingLabel>
-						</FormGroup>
+						<div className="form-floating mb-3">
+							<input type="text" className="form-control" name="titulo" placeholder="Escribe el título..." />
+							<label htmlFor="floatingInput">Título</label>
+						</div>
 					</Col>
 					<Col md="4" sm="4" xs="6">
 						<FormGroup>
 							<FloatingLabel label="Descripción">
-								<Form.Control as="textarea" placeholder="Leave a comment here" name='descripcion' />
-								<FormText className='text-muted'>Descripción del Videojuego</FormText>
+								<FormControl as="textarea" placeholder="Descripcion" name="descripcion" />
+								<FormText className="text-muted">Descripción del Videojuego</FormText>
 							</FloatingLabel>
 						</FormGroup>
 					</Col>
