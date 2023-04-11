@@ -3,7 +3,7 @@ import React, { useEffect, useReducer } from 'react'
 import 'bootstrap-icons/font/bootstrap-icons.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-import { Button, Col, FloatingLabel, Form, FormControl, FormGroup, FormLabel, FormText, Row } from 'react-bootstrap'
+import { Button, Col, FloatingLabel, Form, FormControl, FormGroup, FormText, Row } from 'react-bootstrap'
 
 import JuegoReducer from '../reducers/JuegoReducer'
 
@@ -67,7 +67,18 @@ function MisJuegos() {
 							&nbsp;
 							<div className="d-grid d-inline-block">
 								<FormGroup as={Col} md={2} className="mb-3 d-inline">
-									<FormControl type="text" placeholder="Editar..." onBlur={ e => editar(e, juego.id)} />
+									<FormControl
+										type="text"
+										placeholder="Editar..."
+										onBlur={e => editar(e, juego.id)}
+										onKeyPress={e => {
+											if(e.key === "Enter"){
+												editar(e, juego.id);
+												console.log("Has presionado enter");
+											}
+										}
+									}
+									/>
 								</FormGroup>
 							</div>
 						</li>	
