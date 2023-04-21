@@ -11,10 +11,10 @@ import AppUseRef from './AppUseRef';
 import AppUseMemo from './appUseMemo';
 import AppLayoutEffect from './AppLayoutEffect';
 import AppUseReducer from './AppUseReducer';
+import AppCarousel from './AppCarousel';
 
 import reportWebVitals from './reportWebVitals';
 import { StyledEngineProvider } from '@mui/material/styles';
-import AppCarousel from './AppCarousel';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
