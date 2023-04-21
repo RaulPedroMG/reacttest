@@ -21,12 +21,13 @@ function Carousel() {
 		slidesToShow: 1,
 		slidesToScroll: 1,
 		autoplay: true,
-		autoplaySpeed: 1000,
+		autoplaySpeed: 2500,
+		pauseOnHover: false,
 		fade: true,
 	};
 	return (
 		<div>
-			<Slider {...settings}>
+			<Slider {...settings} style={{ justifyContent: "center" }}>
 				<div>
 					<img src={ImageLogin1} alt="Imagen Login" />
 				</div>
