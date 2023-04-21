@@ -14,11 +14,13 @@ import AppUseReducer from './AppUseReducer';
 
 import reportWebVitals from './reportWebVitals';
 import { StyledEngineProvider } from '@mui/material/styles';
+import AppCarousel from './AppCarousel';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
 	<React.StrictMode>
 		<StyledEngineProvider injectFirst>
+			<AppCarousel/>
 			<AppUseReducer></AppUseReducer>
 			<AppLayoutEffect></AppLayoutEffect>
 			<AppUseMemo></AppUseMemo>
